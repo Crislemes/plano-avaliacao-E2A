@@ -1,0 +1,30 @@
+# Node.js modules
+node_modules/
+
+# Cypress cache e outputs
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+
+# Arquivo de variáveis sensíveis
+cypress.env.json
+
+# Logs locais
+*.log
+
+# Sistema operacional (Windows / Mac)
+.DS_Store
+Thumbs.db
+
+# Arquivos de IDE (VS Code, Jetbrains)
+.vscode/
+.idea/
+
+# Arquivos temporários
+*.tmp
+*.swp
+*.swo
+
+# Arquivos de dependências travadas (opcional)
+package-lock.json
+
