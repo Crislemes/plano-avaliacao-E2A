@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import cadastroPage from './cadastroPage';
+import cadastroPage from '../cadastroPage';
 
 describe('Testes Independentes - Planejamento Acadêmico', () => {
 
@@ -18,31 +18,15 @@ describe('Testes Independentes - Planejamento Acadêmico', () => {
         cy.loginAzureAd();
         cadastroPage.configuraçõesGerais();
     });
-
-    it.only('Deve preencher a seleção de avaliações', () => {
+ 
+   it('Deve preencher a seleção de avaliações', () => {
         cy.loginAzureAd();
         cadastroPage.selecaoAvaliacao();
     });
 
-});
-
-describe('Fluxo Completo - Cadastro de Plano de Avaliação', () => {
-
-    before(() => {
+    it('Deve preencher a seção de assossições', () => {
         cy.loginAzureAd();
+        cadastroPage.AssociarDisciplinaOuTipoDeDisciplina();
     });
-
-    beforeEach(() => {
-        cy.restoreLocalStorage();
-    });
-
-    afterEach(() => {
-        cy.saveLocalStorage();
-    });
-
-    it('Deve executar o fluxo completo de cadastro', () => {
-        cadastroPage.fluxoCompleto();
-    });
-
 });
 
