@@ -30,7 +30,10 @@ const elements = {
     },
     validacoes: {
         associacoesInseridas: '.vcard_associacoes_inseridas',
-        planoCadastrado: '.lista-planos-avaliacao'
+        planoCadastrado: '.lista-planos-avaliacao',
+        mensagemErro: '.v-messages__message',
+        campoObrigatorio: '.v-input--error',
+        textoErro: '.error--text'
     }
 }
 

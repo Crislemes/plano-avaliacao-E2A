@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import cadastroPage from '../cadastroPage';
+import cadastroPage from '../pages/cadastroPage';
 
 describe('Fluxo Completo - Cadastro de Plano de Avaliação', () => {
 

@@ -4,7 +4,7 @@
 import elements from '../elements/elements';
 const index = 2;
 
-class cadastroPage {
+class validaCamposObrigatorios {
 
     normalizeString(str) {
         return str
@@ -108,6 +108,26 @@ class cadastroPage {
             .type('100')
     }
 
+    validarMensagensCamposObrigatorios() {
+        this.setupPlanoAvaliacaoPage();
+
+        // Tenta salvar sem preencher campos obrigatórios
+        cy.getIframeBody(elements.iframe)
+            .contains('button', 'Confirmar')
+            .click();
+
+        // Valida mensagens de erro
+        cy.getIframeBody(elements.iframe)
+            .find(elements.validacoes.mensagemErro)
+            .should('be.visible')
+            .and('contain.text', 'Campo obrigatório');
+
+        // Valida campos com erro
+        cy.getIframeBody(elements.iframe)
+            .find(elements.validacoes.campoObrigatorio)
+            .should('exist');
+    }
+
     AssociarDisciplinaOuTipoDeDisciplina() {
         this.setupPlanoAvaliacaoPage();
 
@@ -187,4 +207,4 @@ class cadastroPage {
     }
 }
 
-export default new cadastroPage();
+export default new validaCamposObrigatorios();

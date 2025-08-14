@@ -1,32 +1,36 @@
 /// <reference types="cypress" />
 
-import cadastroPage from '../cadastroPage';
+import validaCamposObrigatorios from '../pages/validaCamposObrigatoriosPage';
 
 describe('Testes Independentes - Planejamento Acadêmico', () => {
 
     it('Deve validar acesso inicial ao Planejamento Acadêmico', () => {
         cy.loginAzureAd();
-        cadastroPage.acessoInicial();
+        validaCamposObrigatorios.acessoInicial();
     });
 
     it('Deve acessar a tela do Plano de Avaliação', () => {
         cy.loginAzureAd();
-        cadastroPage.acessarPlanoAvaliacao();
+        validaCamposObrigatorios.acessarPlanoAvaliacao();
     });
 
     it('Deve preencher configurações gerais do plano', () => {
         cy.loginAzureAd();
-        cadastroPage.configuraçõesGerais();
+        validaCamposObrigatorios.configuracoesGerais();
     });
  
    it('Deve preencher a seleção de avaliações', () => {
         cy.loginAzureAd();
-        cadastroPage.selecaoAvaliacao();
+        validaCamposObrigatorios.selecaoAvaliacao();
     });
 
     it('Deve preencher a seção de assossições', () => {
         cy.loginAzureAd();
-        cadastroPage.AssociarDisciplinaOuTipoDeDisciplina();
+        validaCamposObrigatorios.associarDisciplinaOuTipoDeDisciplina();
+    });
+     it.only('Deve preencher a seção de assossições', () => {
+        cy.loginAzureAd();
+        validaCamposObrigatorios.validarMensagensCamposObrigatorios();
     });
 });
 
