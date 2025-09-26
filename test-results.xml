@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="36.925" tests="6" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-08-14T16:26:39" tests="0" file="cypress\e2e\tests\validarCamposObrigatorios.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Validando campos obrigatórios" timestamp="2025-08-14T16:26:39" tests="6" time="36.924" failures="0">
+    <testcase name="Validando campos obrigatórios Deve validar acesso inicial ao Planejamento Acadêmico" time="13.648" classname="Deve validar acesso inicial ao Planejamento Acadêmico">
+    </testcase>
+    <testcase name="Validando campos obrigatórios Deve acessar a tela do Plano de Avaliação" time="4.119" classname="Deve acessar a tela do Plano de Avaliação">
+    </testcase>
+    <testcase name="Validando campos obrigatórios Valida mensagens configurações gerais" time="5.606" classname="Valida mensagens configurações gerais">
+    </testcase>
+    <testcase name="Validando campos obrigatórios Valida mensagens Forma Avaliação" time="4.465" classname="Valida mensagens Forma Avaliação">
+    </testcase>
+    <testcase name="Validando campos obrigatórios Valida mensagens Associações" time="4.393" classname="Valida mensagens Associações">
+    </testcase>
+    <testcase name="Validando campos obrigatórios Valida mensagens vinculo Marca" time="4.157" classname="Valida mensagens vinculo Marca">
+    </testcase>
+  </testsuite>
+</testsuites>

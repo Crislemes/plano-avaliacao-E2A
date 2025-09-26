@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import elements from './elements';
+import elements from '../elements/elements';
 const index = 2;
 
 class cadastroPage {
@@ -52,7 +52,13 @@ class cadastroPage {
     }
 
     configuracoesGerais() {
-        this.getIframeElement(elements.inputs.nomePlano).type('Cadastro bem sucedido');
+
+        const nomeDinamico = `Plano ${Math.floor(Math.random() * 10000)}`;
+
+        this.getIframeElement(elements.inputs.nomePlano).type(nomeDinamico);
+        // Opcional: salvar o valor em um alias para usar depois no teste
+        cy.wrap(nomeDinamico).as('nomePlanoCriado');
+        // this.getIframeElement(elements.inputs.nomePlano).type('Cadastro bem sucedido');
         this.getIframeElement(elements.inputs.totalPontos).type('100');
         this.getIframeElement(elements.inputs.frequenciaAprovacao).type('70');
         this.getIframeElement(elements.inputs.avaliacaoAprovacao).type('70');
@@ -147,9 +153,16 @@ class cadastroPage {
             .should('be.visible')
             .click();
 
-        this.getIframeElement(elements.validacoes.planoCadastrado)
+        /*this.getIframeElement(elements.validacoes.planoCadastrado)
             .contains('Cadastro bem sucedido')
-            .should('be.visible');
+            .should('be.visible');*/
+
+        // Valida se o nome do plano aparece visível na tela
+        cy.get('@nomePlanoCriado').then(nome => {
+            this.getIframeElement(elements.validacoes.planoCadastrado)
+                .contains(nome)
+                .should('be.visible');
+        });
 
         cy.log('✅ Plano cadastrado com sucesso!');
     }

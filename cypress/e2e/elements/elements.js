@@ -16,7 +16,8 @@ const elements = {
         frequenciaAprovacao: 'input[placeholder="Inserir a % de frequência para a aprovação"]',
         avaliacaoAprovacao: 'input[placeholder="Inserir a % de avaliação para a aprovação"]',
         valorAvaliacao: '#valorAvaliacao_0',
-        disciplina: '#disciplina'
+        disciplina: '#disciplina',
+        tipoDisciplina: '#tipoDisciplina'
     },
     selects: {
         arredondamento: '#arredondamento',
@@ -24,9 +25,12 @@ const elements = {
         combopesquisaAvaliacao: '#tipoAvaliacao_0',
         comboboxFormaAvaliacao: '#FormaAvaliacao_0',
         radioDisciplina: '#disciplinaRadio',
+        radioTipoDeDisciplina: '#tipoDisciplinaRadio',
         tipoAvaliacao: '#tipoPlanoAvaliacao',
         regraConceito: '#regraConceito',
-        periodoLetivoInicial: '#periodoLetivoInicial'
+        periodoLetivoInicial: '#periodoLetivoInicial',
+        vinculoMarcaInstituicaoCampus: '#habilitaVinculoMarcaIesCampusCheckbox',
+        marca: '#marca_0'
     },
     validacoes: {
         associacoesInseridas: '.vcard_associacoes_inseridas',

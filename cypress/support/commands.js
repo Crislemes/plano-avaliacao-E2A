@@ -30,24 +30,6 @@ Cypress.Commands.add('login', () => {
   });
 });
 
-/*Cypress.Commands.add('selectDigitalOption', (inputIndex) => {
-  cy.get('input[readonly="readonly"]')
-    .eq(inputIndex)
-    .click();
-
-  cy.get('[role="listbox"], [role="options"]', { timeout: 20000 })
-    .contains('span', 'Digital')
-    .should('be.visible')
-    .click({ force: true });
-});*/
-
-/*Cypress.Commands.add('selectListItemByNumber', (number, timeout = 30000) => {
-  cy.get('.v-list-item__title', { timeout })
-    .contains(number)
-    .should('be.visible')
-    .click({ force: true });
-});*/
-
 Cypress.Commands.add("generateToken", () => {
   cy.request({
     method: "GET",
