@@ -141,7 +141,6 @@ Cypress.Commands.add('getRandomDisciplinaETipoIds', () => {
           disciplinaId: randomDisciplinaId,
           tipoDisciplinaId: randomTipoDisciplinaId
         }).then(() => {
-          // Retorna os dois IDs para uso imediato
           return { disciplinaId: randomDisciplinaId, tipoDisciplinaId: randomTipoDisciplinaId };
         });
       });
@@ -153,19 +152,15 @@ Cypress.Commands.add('loginAzureAd', () => {
   const username = Cypress.env('aad_username') || Cypress.config('aad_username');
   const password = Cypress.env('aad_password') || Cypress.config('aad_password');
   
-  // Visit your app's login page
   cy.visit('/');
   
-  // Fill Azure AD login form
   cy.origin('https://login.microsoftonline.com', { args: { username, password } }, ({ username, password }) => {
     cy.get('input[name="loginfmt"]').type(username);
     cy.get('input[type="submit"]').click();
     cy.get('input[name="passwd"]').type(password);
     cy.get('input[type="submit"]').click();
-    // Handle "Stay signed in?" prompt
     cy.get('input[type="submit"]').click();
   });
   
-  // Wait for redirect back to your app
   cy.url().should('contain', 'cloudapp-dev.animaeducacao.com.br');
 });
